@@ -2,7 +2,6 @@
 class AdventOfCode
 {
     public $testData = false;
-    public $oldRow;
     public $oldSum;
     public $answer = 0;
 
@@ -12,9 +11,9 @@ class AdventOfCode
         $j = 0;
 
         $input = $this->testData ? explode(chr(10), file_get_contents('test-input-day-1.txt')) : explode(chr(10), file_get_contents('input-day-1.txt'));
-        foreach ($input as $row) {
+        foreach ($input as $line) {
             if ($i > 0) {
-                $sum = $row + $input[$i + 1] + $input[$i + 2];
+                $sum = $line + $input[$i + 1] + $input[$i + 2];
 
                 if ($sum > $this->oldSum) {
                     $this->answer++;
@@ -22,7 +21,7 @@ class AdventOfCode
 
                 $this->oldSum = $sum;
             } else {
-                $this->oldSum = $row + $input[$i + 1] + $input[$i + 2];
+                $this->oldSum = $line + $input[$i + 1] + $input[$i + 2];
             }
 
             $i++;
