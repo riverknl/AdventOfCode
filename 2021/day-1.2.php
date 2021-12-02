@@ -11,6 +11,7 @@ class AdventOfCode
         $j = 0;
 
         $input = $this->testData ? explode(chr(10), file_get_contents('test-input-day-1.txt')) : explode(chr(10), file_get_contents('input-day-1.txt'));
+        
         foreach ($input as $line) {
             if ($i > 0) {
                 $sum = $line + $input[$i + 1] + $input[$i + 2];
